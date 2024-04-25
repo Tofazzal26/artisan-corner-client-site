@@ -3,16 +3,36 @@ import logo from "../../../public/logo/logo.png";
 const Header = () => {
   const navLinks = (
     <>
-      <NavLink to={"/"}>
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          isActive ? "text-[#eea12c]" : "text-white"
+        }
+      >
         <li>Home</li>
       </NavLink>
-      <NavLink to={"/"}>
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          isActive ? "text-[#eea12c]" : "text-white"
+        }
+      >
         <li>All Art & craft Items</li>
       </NavLink>
-      <NavLink to={"/"}>
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          isActive ? "text-[#eea12c]" : "text-white"
+        }
+      >
         <li>Add Craft Item</li>
       </NavLink>
-      <NavLink to={"/"}>
+      <NavLink
+        to={"/"}
+        className={({ isActive }) =>
+          isActive ? "text-[#eea12c]" : "text-white"
+        }
+      >
         <li>My Art&Craft List</li>
       </NavLink>
     </>
