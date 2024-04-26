@@ -1,9 +1,11 @@
+import FeaturedBlog from "../../Components/FeaturedBlog/FeaturedBlog";
 import Slider from "../../Components/Slider/Slider";
 
 const Home = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <Slider />
+      <FeaturedBlog />
     </div>
   );
 };
