@@ -12,7 +12,7 @@ const Header = () => {
         <li>Home</li>
       </NavLink>
       <NavLink
-        to={"/"}
+        to={"/allArtCraftItems"}
         className={({ isActive }) =>
           isActive ? "text-[#eea12c]" : "text-white"
         }
@@ -20,7 +20,7 @@ const Header = () => {
         <li>All Art & craft Items</li>
       </NavLink>
       <NavLink
-        to={"/"}
+        to={"/addCraftItems"}
         className={({ isActive }) =>
           isActive ? "text-[#eea12c]" : "text-white"
         }
@@ -28,7 +28,7 @@ const Header = () => {
         <li>Add Craft Item</li>
       </NavLink>
       <NavLink
-        to={"/"}
+        to={"/myArtCraftList"}
         className={({ isActive }) =>
           isActive ? "text-[#eea12c]" : "text-white"
         }
