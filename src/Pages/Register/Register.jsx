@@ -2,11 +2,14 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile, setProfileLoad } =
+    useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -41,7 +44,23 @@ const Register = () => {
     if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
       return toast.error("Please enter a valid email address");
     }
-    toast.success("Register Success");
+
+    createUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        updateUserProfile(name, photo)
+          .then(() => {
+            setProfileLoad(true);
+            navigate(location?.state ? location.state : "/");
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    toast.success("Register Successful");
   };
 
   return (

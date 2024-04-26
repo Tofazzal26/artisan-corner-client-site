@@ -1,6 +1,25 @@
 import { NavLink } from "react-router-dom";
 import logo from "../../../public/logo/logo.png";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const { displayName, email } = user || {};
+
+  const [showEmail, setShowEmail] = useState(false);
+
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        toast.success("Logout Successful");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const navLinks = (
     <>
       <NavLink
@@ -81,16 +100,49 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end gap-2">
-            <NavLink to="/login">
-              <button className="text-xl font-semibold bg-[#eea12c] text-white px-6 py-2 rounded-md">
-                Login
-              </button>
-            </NavLink>
-            <NavLink to="/register">
-              <button className="text-xl font-semibold bg-[#eea12c] text-white px-6 py-2 rounded-md">
-                Register
-              </button>
-            </NavLink>
+            {user ? (
+              <>
+                <div>
+                  <div
+                    onMouseLeave={() => setShowEmail(false)}
+                    onMouseEnter={() => setShowEmail(true)}
+                    className="avatar relative"
+                  >
+                    <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                    </div>
+                  </div>
+                  <div className={`${showEmail ? "flex" : "hidden"}`}>
+                    <div className="bg-[#eea12c] lg:w-[250px] rounded-md text-white absolute z-10 right-[410px] top-[60px]">
+                      <div className="p-4 font-semibold">
+                        <h1>{displayName || "Not found"}</h1>
+                        <h1>{email || "Not Found"}</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={handleLogOut}
+                  className="text-xl font-semibold bg-[#eea12c] text-white px-4 py-2 rounded-md"
+                >
+                  Log out
+                </button>
+              </>
+            ) : (
+              <>
+                <NavLink to="/login">
+                  <button className="text-xl font-semibold bg-[#eea12c] text-white px-6 py-2 rounded-md">
+                    Login
+                  </button>
+                </NavLink>
+                <NavLink to="/register">
+                  <button className="text-xl font-semibold bg-[#eea12c] text-white px-6 py-2 rounded-md">
+                    Register
+                  </button>
+                </NavLink>
+              </>
+            )}
           </div>
         </div>
       </div>
