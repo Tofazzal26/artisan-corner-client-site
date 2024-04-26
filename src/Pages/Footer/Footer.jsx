@@ -3,6 +3,7 @@ import { PiTwitterLogoLight } from "react-icons/pi";
 import { TfiWorld } from "react-icons/tfi";
 import { IoLogoInstagram } from "react-icons/io";
 import logo from "../../../public/logo/logo.png";
+import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="mt-8">
@@ -14,10 +15,21 @@ const Footer = () => {
           </h2>
         </div>
         <nav className="grid grid-flow-col text-lg font-semibold gap-4">
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <NavLink to="/">
+            {" "}
+            <button className="link link-hover">Home</button>
+          </NavLink>
+          <NavLink to="/allArtCraftItems">
+            <button className="link link-hover">All Art & craft Items</button>
+          </NavLink>
+          <NavLink to="/addCraftItems">
+            {" "}
+            <button className="link link-hover">Add Craft Item</button>
+          </NavLink>
+          <NavLink to="/myArtCraftList">
+            {" "}
+            <button className="link link-hover">My Art&Craft List</button>
+          </NavLink>
         </nav>
         <nav>
           <div className="grid grid-flow-col gap-4">

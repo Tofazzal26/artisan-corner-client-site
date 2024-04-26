@@ -7,8 +7,8 @@ const Home = () => {
     <div className="px-2">
       <div className="container mx-auto">
         <Slider />
-        <FeaturedBlog />
         <NewArrivals />
+        <FeaturedBlog />
       </div>
     </div>
   );
