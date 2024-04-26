@@ -41,7 +41,19 @@ const AddCraftItem = () => {
       customization,
       stockStatus,
     };
-    console.log(craftItem);
+
+    fetch("http://localhost:3000/artisans", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(craftItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        toast.success("Add Item Successful");
+      });
   };
 
   return (

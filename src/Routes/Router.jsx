@@ -18,6 +18,7 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:3000/artisans"),
       },
       {
         path: "/login",
