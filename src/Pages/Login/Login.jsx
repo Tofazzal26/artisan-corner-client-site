@@ -4,9 +4,24 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import {
+  GithubAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import auth from "../../Firebase/Firebase.config";
 
 const Login = () => {
+  const { logInEmailPassword, setNotLoading } = useContext(AuthContext);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const googleProvider = new GoogleAuthProvider();
+  const githubProvider = new GithubAuthProvider();
+
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -15,10 +30,43 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  const googleLogin = () => {
+    setNotLoading(true);
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        toast.success("Google Login Successfully");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const githubLogin = () => {
+    setNotLoading(true);
+    signInWithPopup(auth, githubProvider)
+      .then((result) => {
+        toast.success("Github Login Successfully");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
     console.log(email, password);
+
+    logInEmailPassword(email, password)
+      .then((result) => {
+        toast.success("Login Successfully");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        toast.error("Please enter a valid email & password");
+      });
   };
 
   return (
@@ -71,13 +119,19 @@ const Login = () => {
             </div>
 
             <div className="flex justify-center gap-2">
-              <p className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2">
+              <p
+                onClick={googleLogin}
+                className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2"
+              >
                 <FcGoogle color="#1a56db" size={30} />
                 <span className="font-semibold text-[12px] lg:text-base">
                   Continue with Google
                 </span>
               </p>
-              <p className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2">
+              <p
+                onClick={githubLogin}
+                className="flex items-center border-2 gap-2 cursor-pointer rounded-full p-2"
+              >
                 <FaGithub color="#087609" size={30} />
                 <span className="font-semibold text-[12px] lg:text-base">
                   Continue with Github

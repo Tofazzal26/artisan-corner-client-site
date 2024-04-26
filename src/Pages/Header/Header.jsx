@@ -6,8 +6,7 @@ import { Toaster, toast } from "react-hot-toast";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
-  const { displayName, email } = user || {};
-
+  const { displayName, email, photoURL } = user || {};
   const [showEmail, setShowEmail] = useState(false);
 
   const handleLogOut = () => {
@@ -109,7 +108,7 @@ const Header = () => {
                     className="avatar relative"
                   >
                     <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                      <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                      <img src={photoURL} />
                     </div>
                   </div>
                   <div className={`${showEmail ? "flex" : "hidden"}`}>
