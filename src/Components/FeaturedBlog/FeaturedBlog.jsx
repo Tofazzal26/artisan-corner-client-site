@@ -11,7 +11,7 @@ const FeaturedBlog = () => {
       </div>
 
       <div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center lg:flex-row flex-col justify-between">
           <div>
             <img className="h-[450px]" src={blog2} alt="" />
           </div>
@@ -29,7 +29,7 @@ const FeaturedBlog = () => {
         </div>
       </div>
       <div>
-        <div className="flex items-center gap-[130px]">
+        <div className="flex items-center lg:flex-row flex-col gap-[130px]">
           <div>
             <div className="space-y-8">
               <p className=" font-semibold">AUG 2024</p>
@@ -51,7 +51,7 @@ const FeaturedBlog = () => {
       </div>
 
       <div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center lg:flex-row flex-col justify-between">
           <div>
             <img className="h-[450px]" src={blog3} alt="" />
           </div>
@@ -69,7 +69,7 @@ const FeaturedBlog = () => {
         </div>
       </div>
       <div>
-        <div className="flex items-center gap-[130px]">
+        <div className="flex items-center lg:flex-row flex-col gap-[130px]">
           <div>
             <div className="space-y-8">
               <p className=" font-semibold">AUG 2024</p>
