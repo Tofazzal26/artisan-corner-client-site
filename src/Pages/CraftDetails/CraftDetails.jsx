@@ -19,11 +19,11 @@ const CraftDetails = () => {
   return (
     <div className="my-[66px]">
       <div className="card  h-full rounded-[8px] shadow-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-3">
-          <figure>
+        <div className="grid grid-cols-1 lg:grid-cols-5">
+          <figure className="col-span-2">
             <img className="h-[350px] w-full" src={imageURL} alt="" />
           </figure>
-          <div className="card-body space-y-2 col-span-2">
+          <div className="card-body space-y-2 col-span-3">
             <div className="flex items-center gap-[120px]">
               <h2 className="font-semibold text-2xl">{itemName}</h2>
               <p className="text-[#eea12c] font-semibold text-xl">{price}$</p>

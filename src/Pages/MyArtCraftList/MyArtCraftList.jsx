@@ -20,7 +20,12 @@ const MyArtCraftList = () => {
     <div className="container mx-auto">
       <div>
         {userAddCraft.map((craftCard) => (
-          <MyArtCraftCard key={craftCard._id} craftCard={craftCard} />
+          <MyArtCraftCard
+            key={craftCard._id}
+            craftCard={craftCard}
+            userAddCraft={userAddCraft}
+            setUserAddCraft={setUserAddCraft}
+          />
         ))}
       </div>
     </div>
