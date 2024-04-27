@@ -1,6 +1,6 @@
-import { IoSettingsOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
-const CraftItems = ({ craft }) => {
+
+const AllArtCraftCard = ({ craft }) => {
   const {
     itemName,
     imageURL,
@@ -12,7 +12,7 @@ const CraftItems = ({ craft }) => {
     customization,
     stockStatus,
     _id,
-  } = craft || {};
+  } = craft;
 
   return (
     <div>
@@ -56,4 +56,4 @@ const CraftItems = ({ craft }) => {
   );
 };
 
-export default CraftItems;
+export default AllArtCraftCard;
