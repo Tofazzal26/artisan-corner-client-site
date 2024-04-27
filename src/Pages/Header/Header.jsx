@@ -46,7 +46,7 @@ const Header = () => {
         <li>Add Craft Item</li>
       </NavLink>
       <NavLink
-        to={"/myArtCraftList"}
+        to={`/myArtCraftList`}
         className={({ isActive }) =>
           isActive ? "text-[#eea12c]" : "text-white"
         }

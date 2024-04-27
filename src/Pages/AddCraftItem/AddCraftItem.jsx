@@ -100,18 +100,48 @@ const AddCraftItem = () => {
               Subcategory Name
             </label>
             <br />
-            <input
-              type="text"
-              name="subcategory_name"
-              className="bg-[#f3f3f3] p-3 w-full my-4 text-sm lg:text-base rounded-sm outline-none text-[#9f9f9f]"
-              placeholder="Subcategory Name"
-              {...register("subcategory_name", { required: true })}
-            />
-            {errors.subcategory_name && (
-              <p className="text-red-600">
-                This subcategory_name field is required
-              </p>
-            )}
+            <select
+              className="lg:text-lg md:text-base text-sm my-4 font-semibold border-2 px-12 rounded-md border-gray-400 py-1"
+              {...register("subcategory_name")}
+            >
+              <option
+                className="lg:text-lg md:text-base text-sm font-semibold"
+                value="Landscape painting"
+              >
+                Landscape painting
+              </option>
+              <option
+                className="lg:text-lg md:text-base text-sm font-semibold"
+                value="Pencil Sketch Portrait"
+              >
+                Pencil Sketch Portrait
+              </option>
+              <option
+                className="lg:text-lg md:text-base text-sm font-semibold"
+                value="Animal Watercolor"
+              >
+                Animal Watercolor
+              </option>
+              <option
+                className="lg:text-lg md:text-base text-sm font-semibold"
+                value="Abstract Oil Painting"
+              >
+                Abstract Oil Painting
+              </option>
+              <option
+                className="lg:text-lg md:text-base text-sm font-semibold"
+                value="Figure Charcoal Sketch"
+              >
+                Figure Charcoal Sketch
+              </option>
+              <option
+                className="lg:text-lg md:text-base text-sm font-semibold"
+                value="Superhero Cartoon Design"
+              >
+                Superhero Cartoon Design
+              </option>
+            </select>
+            <br />
 
             <label className="lg:text-lg md:text-base text-sm font-semibold ">
               Short Description
