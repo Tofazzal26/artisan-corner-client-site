@@ -17,13 +17,21 @@ const Home = () => {
         <div>
           <div className="my-14">
             <h1 className="text-center text-4xl font-semibold">
-              Our Craft Items
+              Our Craft and Art Items
             </h1>
           </div>
           <div className="grid grid-cols-1 gap-6  lg:grid-cols-3">
-            {crafts.map((craft) => (
+            {crafts.length > 6
+              ? crafts
+                  .map((craft) => <CraftItems key={craft._id} craft={craft} />)
+                  .slice(0, 6)
+              : crafts.map((craft) => (
+                  <CraftItems key={craft._id} craft={craft} />
+                ))}
+
+            {/* {crafts.map((craft) => (
               <CraftItems key={craft._id} craft={craft} />
-            ))}
+            ))} */}
           </div>
         </div>
 
