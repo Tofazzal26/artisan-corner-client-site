@@ -6,6 +6,7 @@ import Arrivals5 from "../../../public/Arrivals/Arrival5.png";
 import Arrivals6 from "../../../public/Arrivals/Arrivals6.png";
 import Arrivals7 from "../../../public/Arrivals/Arrivals7.png";
 import Arrivals8 from "../../../public/Arrivals/Arrivals8.png";
+import { Typewriter } from "react-simple-typewriter";
 
 const NewArrivals = () => {
   return (
@@ -18,40 +19,134 @@ const NewArrivals = () => {
         <div className="grid lg:grid-cols-4 grid-cols-1">
           <div className="flex justify-center gap-4 items-center flex-col">
             <img src={Arrivals1} alt="" />
-            <h2 className="font-semibold text-lg">Wooden Dice</h2>
+            <h2 className="font-semibold text-lg">
+              Wooden{" "}
+              <span className="text-red-500">
+                <Typewriter
+                  cursor
+                  cursorBlinking
+                  delaySpeed={1000}
+                  loop={0}
+                  typeSpeed={75}
+                  words={["Dice"]}
+                />
+              </span>
+            </h2>
           </div>
           <div className="flex justify-center gap-4 items-center flex-col">
             <img src={Arrivals2} alt="" />
-            <h2 className="font-semibold text-lg">Curly Willow Orb</h2>
+            <h2 className="font-semibold text-lg">
+              Curly Willow{" "}
+              <span className="text-red-500">
+                <Typewriter
+                  cursor
+                  cursorBlinking
+                  delaySpeed={1000}
+                  loop={0}
+                  typeSpeed={75}
+                  words={["Orb"]}
+                />
+              </span>
+            </h2>
           </div>
           <div className="flex justify-center gap-4 items-center flex-col">
             <img src={Arrivals3} alt="" />
-            <h2 className="font-semibold text-lg">Deep Serving Bowl</h2>
+            <h2 className="font-semibold text-lg">
+              Deep Serving{" "}
+              <span className="text-red-500">
+                <Typewriter
+                  cursor
+                  cursorBlinking
+                  delaySpeed={1000}
+                  loop={0}
+                  typeSpeed={75}
+                  words={["Bowl"]}
+                />
+              </span>
+            </h2>
           </div>
           <div className="flex justify-center gap-4 items-center flex-col">
             <img src={Arrivals4} alt="" />
-            <h2 className="font-semibold text-lg">Ema White Vase</h2>
+            <h2 className="font-semibold text-lg">
+              Ema White{" "}
+              <span className="text-red-500">
+                <Typewriter
+                  cursor
+                  cursorBlinking
+                  delaySpeed={1000}
+                  loop={0}
+                  typeSpeed={75}
+                  words={["Vase"]}
+                />
+              </span>
+            </h2>
           </div>
         </div>
         <div className="my-10">
           <div className="grid lg:grid-cols-4 grid-cols-1">
             <div className="flex justify-center gap-4 items-center flex-col">
               <img src={Arrivals5} alt="" />
-              <h2 className="font-semibold text-lg">Bear Security Blanket</h2>
+              <h2 className="font-semibold text-lg">
+                Bear Security{" "}
+                <span className="text-red-500">
+                  <Typewriter
+                    cursor
+                    cursorBlinking
+                    delaySpeed={1000}
+                    loop={0}
+                    typeSpeed={75}
+                    words={["Blanket"]}
+                  />
+                </span>
+              </h2>
             </div>
             <div className="flex justify-center gap-4 items-center flex-col">
               <img src={Arrivals6} alt="" />
               <h2 className="font-semibold text-lg">
-                Candle & Diffuser Bundle
+                Candle & Diffuser{" "}
+                <span className="text-red-500">
+                  <Typewriter
+                    cursor
+                    cursorBlinking
+                    delaySpeed={1000}
+                    loop={0}
+                    typeSpeed={75}
+                    words={["Bundle"]}
+                  />
+                </span>
               </h2>
             </div>
             <div className="flex justify-center gap-4 items-center flex-col">
               <img src={Arrivals7} alt="" />
-              <h2 className="font-semibold text-lg">Acai Canoe</h2>
+              <h2 className="font-semibold text-lg">
+                Acai{" "}
+                <span className="text-red-500">
+                  <Typewriter
+                    cursor
+                    cursorBlinking
+                    delaySpeed={1000}
+                    loop={0}
+                    typeSpeed={75}
+                    words={["Canoe"]}
+                  />
+                </span>
+              </h2>
             </div>
             <div className="flex justify-center gap-4 items-center flex-col">
               <img src={Arrivals8} alt="" />
-              <h2 className="font-semibold text-lg">Wall Hook</h2>
+              <h2 className="font-semibold text-lg">
+                Wall{" "}
+                <span className="text-red-500">
+                  <Typewriter
+                    cursor
+                    cursorBlinking
+                    delaySpeed={1000}
+                    loop={0}
+                    typeSpeed={75}
+                    words={["Hook"]}
+                  />
+                </span>
+              </h2>
             </div>
           </div>
         </div>

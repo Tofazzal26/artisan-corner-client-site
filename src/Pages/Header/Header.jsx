@@ -3,6 +3,7 @@ import logo from "../../../public/logo/logo.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { Toaster, toast } from "react-hot-toast";
+
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -53,6 +54,14 @@ const Header = () => {
       >
         <li>My Art&Craft List</li>
       </NavLink>
+      <NavLink
+        to={`/about`}
+        className={({ isActive }) =>
+          isActive ? "text-[#eea12c]" : "text-white"
+        }
+      >
+        <li>About Us</li>
+      </NavLink>
     </>
   );
 
@@ -89,12 +98,14 @@ const Header = () => {
                 {navLinks}
               </ul>
             </div>
-            <a className="btn btn-ghost text-white text-2xl">
-              <img className="h-6" src={logo} alt="" /> Artisan Corner
-            </a>
+            <NavLink to="/">
+              <button className="btn btn-ghost text-white text-2xl">
+                <img className="h-6" src={logo} alt="" /> Artisan Corner
+              </button>
+            </NavLink>
           </div>
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal space-x-4 text-white text-[18px] font-semibold px-1">
+            <ul className="menu menu-horizontal space-x-6 text-white text-[18px] font-semibold px-1">
               {navLinks}
             </ul>
           </div>

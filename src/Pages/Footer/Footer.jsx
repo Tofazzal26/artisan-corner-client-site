@@ -31,6 +31,7 @@ const Footer = () => {
             <button className="link link-hover">My Art&Craft List</button>
           </NavLink>
         </nav>
+
         <nav>
           <div className="grid grid-flow-col gap-4">
             <span>
@@ -59,8 +60,14 @@ const Footer = () => {
             </span>
           </div>
         </nav>
+        <nav className="space-y-2">
+          <p className="text-[20px]">Mail: info@example.com</p>
+          <p className="text-[20px]">Phone: 000-123456789</p>
+          <p className="text-[20px]">236 Woodlake Str, NYC 10001</p>
+        </nav>
+
         <aside>
-          <p className="text-lg">
+          <p className="text-xl">
             Copyright © 2024 - All right reserved by Artisan Corner
           </p>
         </aside>

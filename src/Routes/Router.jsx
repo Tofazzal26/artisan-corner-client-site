@@ -10,6 +10,7 @@ import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import CraftDetails from "../Pages/CraftDetails/CraftDetails";
 import ArtCraftUpdate from "../Pages/ArtCraftUpdate/ArtCraftUpdate";
+import About from "../Pages/About/About";
 
 const Router = createBrowserRouter([
   {
@@ -60,6 +61,10 @@ const Router = createBrowserRouter([
             <MyArtCraftList />
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/update/:id",
