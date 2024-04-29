@@ -14,8 +14,6 @@ const Home = () => {
 
   const [categoryItem, setCategoryItem] = useState([]);
 
-  console.log(categoryItem);
-
   useEffect(() => {
     fetch(`http://localhost:3000/category_collection`)
       .then((res) => res.json())
