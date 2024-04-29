@@ -10,7 +10,7 @@ const FeaturedBlog = () => {
       <div className="my-16">
         <div className="space-y-2">
           <h1 className="text-center text-4xl font-semibold">Featured Blog</h1>
-          <h3 className="text-center text-lg w-[700px] mx-auto font-semibold">
+          <h3 className="text-center text-lg lg:w-[700px] mx-auto font-semibold">
             <Typewriter
               cursor
               cursorBlinking

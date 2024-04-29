@@ -13,7 +13,7 @@ const CategoryCard = ({ items }) => {
           </figure>
           <div className="card-body space-y-2">
             <p className="text-[20px] text-orange-400 font-semibold">
-              Category: {subcategory}
+              {subcategory}
             </p>
             <p className="text-[18px] text-gray-600 font-semibold">
               {description}

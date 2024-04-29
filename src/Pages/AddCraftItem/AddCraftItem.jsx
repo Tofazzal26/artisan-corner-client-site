@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from "react-hot-toast";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Typewriter } from "react-simple-typewriter";
 const AddCraftItem = () => {
   const { user } = useContext(AuthContext);
 
@@ -61,7 +62,18 @@ const AddCraftItem = () => {
       <div className="bg-[#ffffff] mt-14 shadow-loginSd lg:w-1/2 md:w-2/3 mx-auto">
         <div className="md:w-2/3 lg:w-2/3 mx-auto lg:p-14 p-4 border-2 rounded-md">
           <h1 className="font-semibold text-lg lg:text-3xl md:text-2xl text-center">
-            Add Craft Item
+            Add Craft {""}
+            <span className="text-[#eea12c]">
+              <Typewriter
+                cursor
+                cursorBlinking
+                delaySpeed={1000}
+                deleteSpeed={25}
+                loop={0}
+                typeSpeed={75}
+                words={["Item"]}
+              />
+            </span>
           </h1>
           <div className="divider"></div>
           <form onSubmit={handleSubmit(onSubmit)}>
