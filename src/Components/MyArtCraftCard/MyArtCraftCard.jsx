@@ -3,16 +3,16 @@ import { MdDeleteForever } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
 import Swal from "sweetalert2";
+
 const MyArtCraftCard = ({ craftCard, setUserAddCraft, userAddCraft }) => {
   const {
     itemName,
     imageURL,
-    subcategory_name,
     description,
     rating,
     price,
     Processing_Time,
-    customization,
+    customization, // Destructure customization
     _id,
     stockStatus,
   } = craftCard || {};
@@ -39,8 +39,10 @@ const MyArtCraftCard = ({ craftCard, setUserAddCraft, userAddCraft }) => {
                 text: "Your file has been deleted.",
                 icon: "success",
               });
-              const reaming = userAddCraft.filter((craft) => craft._id !== id);
-              setUserAddCraft(reaming);
+              const remaining = userAddCraft.filter(
+                (craft) => craft._id !== id
+              );
+              setUserAddCraft(remaining);
             }
           });
       }
@@ -60,7 +62,6 @@ const MyArtCraftCard = ({ craftCard, setUserAddCraft, userAddCraft }) => {
             <p className="text-[18px] text-gray-600 font-semibold">
               Rating: {rating}
             </p>
-
             <p className="text-[18px] text-gray-600 font-semibold">
               Customization: {customization}
             </p>
