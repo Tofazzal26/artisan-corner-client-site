@@ -11,6 +11,7 @@ import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import CraftDetails from "../Pages/CraftDetails/CraftDetails";
 import ArtCraftUpdate from "../Pages/ArtCraftUpdate/ArtCraftUpdate";
 import About from "../Pages/About/About";
+import CategoryFilter from "../Pages/CategoryFilter/CategoryFilter";
 
 const Router = createBrowserRouter([
   {
@@ -61,6 +62,12 @@ const Router = createBrowserRouter([
             <MyArtCraftList />
           </PrivateRouter>
         ),
+      },
+      {
+        path: "/subcategory/:category",
+        element: <CategoryFilter />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/categoryCollection/${params.category}`),
       },
       {
         path: "/about",

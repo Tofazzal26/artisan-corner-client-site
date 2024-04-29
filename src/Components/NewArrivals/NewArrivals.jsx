@@ -12,7 +12,24 @@ const NewArrivals = () => {
   return (
     <div>
       <div className="my-16">
-        <h1 className="text-center text-4xl font-semibold">New Arrivals</h1>
+        <div>
+          <div className="text-center space-y-2">
+            <h1 className="text-center text-4xl font-semibold">New Arrivals</h1>
+            <h3 className="text-center text-lg w-[700px] mx-auto font-semibold">
+              <Typewriter
+                cursor
+                cursorBlinking
+                delaySpeed={1000}
+                deleteSpeed={25}
+                loop={0}
+                typeSpeed={75}
+                words={[
+                  "Consider the aesthetic style of the piece. Is it realistic, abstract, impressionistic, minimalist, or something else entirely? Pay attention to elements like color palette, composition, and use of space.",
+                ]}
+              />
+            </h3>
+          </div>
+        </div>
       </div>
 
       <div>

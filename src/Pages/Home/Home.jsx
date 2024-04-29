@@ -1,15 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FeaturedBlog from "../../Components/FeaturedBlog/FeaturedBlog";
 import NewArrivals from "../../Components/NewArrivals/NewArrivals";
 import Slider from "../../Components/Slider/Slider";
 import { useLoaderData } from "react-router-dom";
 import CraftItems from "../../Components/CraftItems/CraftItems";
 import { Typewriter } from "react-simple-typewriter";
+import CategoryCard from "../../Components/CategoryCard/CategoryCard";
 
 const Home = () => {
   const loadedCraftData = useLoaderData();
 
   const [crafts, setCrafts] = useState(loadedCraftData);
+
+  const [categoryItem, setCategoryItem] = useState([]);
+
+  console.log(categoryItem);
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/category_collection`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCategoryItem(data);
+      });
+  }, []);
 
   return (
     <div className="px-2">
@@ -17,11 +30,29 @@ const Home = () => {
         <Slider />
         <div>
           <div className="my-14 text-center">
-            <label className="lg:text-xl md:text-base text-sm font-semibold ">
-              Select Subcategory
-            </label>
+            <h2 className="lg:text-4xl md:text-base mb-12 text-sm font-semibold ">
+              Art and Craft {""}
+              <span className="text-[#eea12c]">
+                <Typewriter
+                  cursor
+                  cursorBlinking
+                  delaySpeed={1000}
+                  deleteSpeed={25}
+                  loop={0}
+                  typeSpeed={75}
+                  words={["Category"]}
+                />
+              </span>
+            </h2>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+              {categoryItem.map((items) => (
+                <CategoryCard key={items._id} items={items} />
+              ))}
+            </div>
+
             <br />
-            <select className="lg:text-lg md:text-base text-sm my-4 font-semibold border-2 px-12 rounded-md border-gray-400 py-1">
+            {/* <select className="lg:text-lg md:text-base text-sm my-4 font-semibold border-2 px-12 rounded-md border-gray-400 py-1">
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
                 value="Landscape painting"
@@ -30,35 +61,35 @@ const Home = () => {
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Pencil Sketch Portrait"
+                value="Portrait Drawing"
               >
-                Pencil Sketch Portrait
+                Portrait Drawing
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Animal Watercolor"
+                value="Watercolour Painting"
               >
-                Animal Watercolor
+                Watercolour Painting
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Abstract Oil Painting"
+                value="Oil Painting"
               >
-                Abstract Oil Painting
+                Oil Painting
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Figure Charcoal Sketch"
+                value="Charcoal Sketching"
               >
-                Figure Charcoal Sketch
+                Charcoal Sketching
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Superhero Cartoon Design"
+                value="Cartoon Drawing"
               >
-                Superhero Cartoon Design
+                Cartoon Drawing
               </option>
-            </select>
+            </select> */}
           </div>
           <div className="my-12 space-y-2">
             <h1 className="text-center text-4xl font-semibold">

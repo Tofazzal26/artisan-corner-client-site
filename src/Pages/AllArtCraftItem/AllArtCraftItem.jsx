@@ -27,7 +27,7 @@ const AllArtCraftItem = () => {
             {allCraft.map((table) => (
               <tbody key={table._id}>
                 <tr>
-                  <th className="text-[18px] font-medium">1</th>
+                  <th className="text-[18px] font-medium"></th>
                   <td className="text-[18px] font-medium">{table.itemName}</td>
                   <td className="text-[18px] font-medium">
                     {table.subcategory_name}

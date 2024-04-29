@@ -48,7 +48,7 @@ const MyArtCraftCard = ({ craftCard, setUserAddCraft, userAddCraft }) => {
   };
 
   return (
-    <div className="my-[66px]">
+    <div className="mt-[20px] mb-[66px]">
       <div className="card  h-full rounded-[8px] shadow-xl">
         <div className="grid grid-cols-1 p-6 items-center lg:grid-cols-5">
           <figure className="col-span-2">

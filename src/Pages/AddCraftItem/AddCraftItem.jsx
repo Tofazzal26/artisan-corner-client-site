@@ -112,9 +112,9 @@ const AddCraftItem = () => {
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Pencil Sketch Portrait"
+                value="Portrait Drawing"
               >
-                Pencil Sketch Portrait
+                Portrait Drawing
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
@@ -124,21 +124,21 @@ const AddCraftItem = () => {
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Abstract Oil Painting"
+                value="Cartoon Drawing"
               >
-                Abstract Oil Painting
+                Cartoon Drawing
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Figure Charcoal Sketch"
+                value="Oil Painting"
               >
-                Figure Charcoal Sketch
+                Oil Painting
               </option>
               <option
                 className="lg:text-lg md:text-base text-sm font-semibold"
-                value="Superhero Cartoon Design"
+                value="Charcoal Sketching"
               >
-                Superhero Cartoon Design
+                Charcoal Sketching
               </option>
             </select>
             <br />
