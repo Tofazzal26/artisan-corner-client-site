@@ -6,7 +6,7 @@
 ##### The world of art and craft, where creativity knows no bounds and imagination takes flight! Whether you're a seasoned artisan or just beginning your journey into the realm of handmade wonders, you've found a place where inspiration thrives and expression reigns supreme.
 
 
-## Live Link --> [Awesome README](https://artisan-corner-832b4.web.app/)
+## Live Link --> [Artisan-Corner](https://artisan-corner-832b4.web.app/)
 
 
 
