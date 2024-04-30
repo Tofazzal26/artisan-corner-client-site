@@ -3,7 +3,7 @@ import { PiTwitterLogoLight } from "react-icons/pi";
 import { TfiWorld } from "react-icons/tfi";
 import { IoLogoInstagram } from "react-icons/io";
 import logo from "../../../public/logo/logo.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="mt-8">
@@ -34,30 +34,46 @@ const Footer = () => {
 
         <nav>
           <div className="grid grid-flow-col gap-4">
-            <span>
-              <BiLogoFacebook
-                className="rounded-full w-[50px] p-2 h-[50px] border-2"
-                size={20}
-              />
-            </span>
-            <span>
-              <PiTwitterLogoLight
-                className="rounded-full w-[50px] p-2 h-[50px] border-2"
-                size={20}
-              />
-            </span>
-            <span>
-              <TfiWorld
-                className="rounded-full w-[50px] p-3 h-[50px] border-2"
-                size={20}
-              />
-            </span>
-            <span>
-              <IoLogoInstagram
-                className="rounded-full w-[50px] p-2 h-[50px] border-2"
-                size={20}
-              />
-            </span>
+            <Link
+              target="_blank"
+              to={`https://www.facebook.com/profile.php?id=100073458903552`}
+            >
+              <span>
+                <BiLogoFacebook
+                  className="rounded-full w-[50px] p-2 h-[50px] border-2"
+                  size={20}
+                />
+              </span>
+            </Link>
+            <Link target="_blank" to={`https://twitter.com/?lang=en`}>
+              {" "}
+              <span>
+                <PiTwitterLogoLight
+                  className="rounded-full w-[50px] p-2 h-[50px] border-2"
+                  size={20}
+                />
+              </span>
+            </Link>
+            <Link
+              target="_blank"
+              to={`https://mail.google.com/mail/u/0/#inbox`}
+            >
+              <span>
+                <TfiWorld
+                  className="rounded-full w-[50px] p-3 h-[50px] border-2"
+                  size={20}
+                />
+              </span>
+            </Link>
+
+            <Link target="_blank" to={`https://www.instagram.com/`}>
+              <span>
+                <IoLogoInstagram
+                  className="rounded-full w-[50px] p-2 h-[50px] border-2"
+                  size={20}
+                />
+              </span>
+            </Link>
           </div>
         </nav>
         <nav className="space-y-2">
