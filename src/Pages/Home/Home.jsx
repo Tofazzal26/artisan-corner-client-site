@@ -15,7 +15,7 @@ const Home = () => {
   const [categoryItem, setCategoryItem] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/category_collection`)
+    fetch(`https://artisan-server-khaki.vercel.app/category_collection`)
       .then((res) => res.json())
       .then((data) => {
         setCategoryItem(data);

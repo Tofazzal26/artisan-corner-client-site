@@ -17,7 +17,9 @@ const MyArtCraftList = () => {
     : userAddCraft;
 
   useEffect(() => {
-    fetch(`http://localhost:3000/artisans_email/${user.email}`)
+    fetch(
+      `https://artisan-server-khaki.vercel.app/artisans_email/${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setUserAddCraft(data);
@@ -28,21 +30,23 @@ const MyArtCraftList = () => {
     <div className="container mx-auto">
       <div>
         <div className="text-center my-6">
-          <label className="lg:text-xl md:text-base text-sm font-semibold ">
+          <label className="lg:text-2xl md:text-base text-sm font-semibold ">
             Select Customization
           </label>
           <br />
           <select
-            className="border-2 mt-4 p-4 outline-none"
+            className="border-2 rounded-md font-semibold mt-4 p-4 outline-none"
             onChange={handleCustomization}
             value={theCustomization}
           >
-            <option value="">All Customization</option>
+            <option className="font-semibold" value="">
+              All Customization
+            </option>
             {Array.from(
               new Set(userAddCraft.map((item) => item.customization))
             ).map((customization) => (
               <option
-                className="capitalize"
+                className="capitalize font-semibold"
                 key={customization}
                 value={customization}
               >

@@ -22,7 +22,7 @@ const Router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/artisans"),
+        loader: () => fetch("https://artisan-server-khaki.vercel.app/artisans"),
       },
       {
         path: "/craftDetails/:id",
@@ -32,7 +32,9 @@ const Router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/artisans/${params.id}`),
+          fetch(
+            `https://artisan-server-khaki.vercel.app/artisans/${params.id}`
+          ),
       },
       {
         path: "/login",
@@ -45,7 +47,7 @@ const Router = createBrowserRouter([
       {
         path: "/allArtCraftItems",
         element: <AllArtCraftItem />,
-        loader: () => fetch("http://localhost:3000/artisans"),
+        loader: () => fetch("https://artisan-server-khaki.vercel.app/artisans"),
       },
       {
         path: "/addCraftItems",
@@ -67,7 +69,9 @@ const Router = createBrowserRouter([
         path: "/subcategory/:category",
         element: <CategoryFilter />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/categoryCollection/${params.category}`),
+          fetch(
+            `https://artisan-server-khaki.vercel.app/categoryCollection/${params.category}`
+          ),
       },
       {
         path: "/about",
@@ -77,7 +81,9 @@ const Router = createBrowserRouter([
         path: "/update/:id",
         element: <ArtCraftUpdate />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/artisans/${params.id}`),
+          fetch(
+            `https://artisan-server-khaki.vercel.app/artisans/${params.id}`
+          ),
       },
     ],
   },

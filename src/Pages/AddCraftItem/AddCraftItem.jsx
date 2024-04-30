@@ -43,7 +43,7 @@ const AddCraftItem = () => {
       stockStatus,
     };
 
-    fetch("http://localhost:3000/artisans", {
+    fetch("https://artisan-server-khaki.vercel.app/artisans", {
       method: "POST",
       headers: {
         "content-type": "application/json",

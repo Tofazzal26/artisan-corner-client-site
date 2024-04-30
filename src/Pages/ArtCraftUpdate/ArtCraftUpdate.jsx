@@ -48,7 +48,7 @@ const ArtCraftUpdate = () => {
       stockStatus,
     };
 
-    fetch(`http://localhost:3000/artisans/${_id}`, {
+    fetch(`https://artisan-server-khaki.vercel.app/artisans/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
