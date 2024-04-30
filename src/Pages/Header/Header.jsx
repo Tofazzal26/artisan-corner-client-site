@@ -111,14 +111,14 @@ const Header = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 bg-gray-600 p-2 text-orange-400 z-10 shadow rounded-box w-52"
               >
                 {navLinks}
               </ul>
             </div>
             <NavLink to="/">
-              <button className="btn btn-ghost text-white text-2xl">
-                <img className="h-6" src={logo} alt="" /> Artisan Corner
+              <button className="btn btn-ghost lg:flex hidden text-white text-lg lg:text-2xl">
+                <img className="h-3 lg:h-6" src={logo} alt="" /> Artisan Corner
               </button>
             </NavLink>
           </div>
@@ -128,7 +128,7 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end gap-2">
-            <label className="cursor-pointer px-4 grid place-items-center">
+            <label className="cursor-pointer lg:px-4 grid place-items-center">
               <input
                 type="checkbox"
                 onChange={handleToggle}
@@ -197,12 +197,12 @@ const Header = () => {
             ) : (
               <>
                 <NavLink to="/login">
-                  <button className="text-xl font-semibold bg-[#eea12c] text-white px-6 py-2 rounded-md">
+                  <button className="lg:text-xl font-semibold bg-[#eea12c] text-white px-2 py-1 lg:px-6 lg:py-2 rounded-md">
                     Login
                   </button>
                 </NavLink>
                 <NavLink to="/register">
-                  <button className="text-xl font-semibold bg-[#eea12c] text-white px-6 py-2 rounded-md">
+                  <button className="lg:text-xl font-semibold bg-[#eea12c] text-white px-2 py-1 lg:px-6 lg:py-2 rounded-md">
                     Register
                   </button>
                 </NavLink>
